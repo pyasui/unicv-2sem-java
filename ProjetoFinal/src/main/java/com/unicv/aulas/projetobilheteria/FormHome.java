@@ -49,6 +49,11 @@ public class FormHome extends javax.swing.JFrame {
         jMenu1.add(jMenuItem1);
 
         jMenuItem3.setText("Estados");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem3);
 
         jMenuBar1.add(jMenu1);
@@ -74,6 +79,12 @@ public class FormHome extends javax.swing.JFrame {
         form.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         form.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        var form = new FormListaEstados();
+        form.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        form.setVisible(true);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments
