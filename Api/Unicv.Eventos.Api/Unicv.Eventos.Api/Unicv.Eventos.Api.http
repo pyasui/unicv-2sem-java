@@ -1,0 +1,6 @@
+@Unicv.Eventos.Api_HostAddress = http://localhost:5058
+
+GET {{Unicv.Eventos.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
