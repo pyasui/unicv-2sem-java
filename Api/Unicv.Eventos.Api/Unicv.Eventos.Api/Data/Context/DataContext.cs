@@ -19,4 +19,5 @@ public class DataContext : DbContext
     }
 
     public DbSet<PaymentMethod> DbPaymentMethods { get; set; }
+    public DbSet<State> DbStates { get; set; }
 }
