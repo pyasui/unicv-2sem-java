@@ -41,6 +41,20 @@ public class StatesController : ControllerBase
         if (request == null)
             return BadRequest();
 
+        // campos obrigatórios
+        if (string.IsNullOrWhiteSpace(request.Name))
+            return StatusCode(422, "O nome do estado é obrigatório");
+
+        if (string.IsNullOrWhiteSpace(request.Acronym))
+            return StatusCode(422, "A sigla do estado é obrigatória");
+
+        // validações
+        if (_db.DbStates.Any(x => x.Name == request.Name))
+            return BadRequest("Já existe um estado cadastrado com este nome");
+
+        if (_db.DbStates.Any(x => x.Acronym == request.Acronym))
+            return BadRequest("Já existe um estado cadastrado com esta sigla");
+
         var entity = new State
         {
             Name = request.Name,
@@ -58,6 +72,20 @@ public class StatesController : ControllerBase
     {
         if (request == null)
             return BadRequest();
+
+        // campos obrigatórios
+        if (string.IsNullOrWhiteSpace(request.Name))
+            return StatusCode(422, "O nome do estado é obrigatório");
+
+        if (string.IsNullOrWhiteSpace(request.Acronym))
+            return StatusCode(422, "A sigla do estado é obrigatória");
+
+        // validações
+        if (_db.DbStates.Any(x => x.Name == request.Name && x.Id != id))
+            return BadRequest("Já existe um estado cadastrado com este nome");
+
+        if (_db.DbStates.Any(x => x.Acronym == request.Acronym && x.Id != id))
+            return BadRequest("Já existe um estado cadastrado com esta sigla");
 
         var entity = _db.DbStates.FirstOrDefault(x => x.Id == id);
 
