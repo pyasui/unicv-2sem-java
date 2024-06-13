@@ -10,11 +10,23 @@ package com.unicv.aulas.projetobilheteria;
  */
 public class FormGerenciarEstados extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FormGerenciarEstados
-     */
+    private int id;
+    private FormListaEstados formPai;
+
     public FormGerenciarEstados() {
         initComponents();
+    }
+
+    public void setConfiguracoes(int id, FormListaEstados pai) {
+        this.id = id;
+        this.formPai = pai;
+    }
+
+    public void carregarDados() {
+        this.textNome.setText("Texto");
+        this.textSigla.setText("A SIGLA");
+        
+        // chama a api aqui para carregar os dados do estado
     }
 
     /**
@@ -42,6 +54,11 @@ public class FormGerenciarEstados extends javax.swing.JFrame {
         jButton1.setText("Fechar");
 
         jButton2.setText("Salvar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Dados"));
 
@@ -119,6 +136,19 @@ public class FormGerenciarEstados extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        if (id == 0)
+            System.out.println("POST");
+        else
+            System.out.println("PUT");
+        
+        formPai.atualizarDados();
+        formPai.recarregarTabela();
+        
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
