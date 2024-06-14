@@ -138,11 +138,10 @@ public class FormGerenciarEstados extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
         if (id == 0)
-            System.out.println("POST");
+            System.out.println("POST"); // chamar a API de POST
         else
-            System.out.println("PUT");
+            System.out.println("PUT"); // chamar a API de PUT
         
         formPai.atualizarDados();
         formPai.recarregarTabela();

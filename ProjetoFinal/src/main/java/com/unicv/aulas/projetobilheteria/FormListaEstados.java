@@ -217,7 +217,6 @@ public class FormListaEstados extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
         var linhasSelecionadas = this.tabelaDados.getSelectedRowCount();
 
         if (linhasSelecionadas != 1) {
@@ -231,7 +230,7 @@ public class FormListaEstados extends javax.swing.JFrame {
             var id = this.tabelaDados.getValueAt(linha, 0);
 
             // chama a api para exclusao
-            // recarrega a tela
+            // recarregar a tela
             System.out.println("esc");
         }
     }//GEN-LAST:event_jButton3ActionPerformed
